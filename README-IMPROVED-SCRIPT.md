@@ -8,8 +8,9 @@ The `Insert-and-hide-a-column-improved.py` script is an enhanced version that au
 2. **Copies all data** from that column (header + all rows)
 3. **Inserts a new column** after the last column
 4. **Pastes the copied data** into the new column
-5. **Hides the new column**
+5. **Hides the previous column** (the one that was copied from)
 6. **Adds a new header** with today's date
+
 
 ## Usage
 
@@ -55,11 +56,11 @@ python Insert-and-hide-a-column-improved.py "path/to/your/file.xlsx" --date-form
 ✓ Copied 8 rows from column FH
 ✓ Inserted new column at FI (column 165)
 ✓ Pasted data into new column FI
-✓ Hidden column FI
+✓ Hidden previous column FH
 ✓ Set FI1 = 'COMMENTS 11-03-2026'
 ✓ Saved: file.xlsx
 
-✅ Complete! New column inserted with copied data and hidden.
+✅ Complete! New column inserted with copied data and previous column hidden.
 ```
 
 ## Key Improvements Over Original Script
@@ -97,8 +98,9 @@ The script has been tested on the KCC tracking file and successfully:
 2. ✅ Copied all data from that column
 3. ✅ Inserted a new column (FI - column 165)
 4. ✅ Pasted the copied data
-5. ✅ Hidden the new column
+5. ✅ Hidden the previous column
 6. ✅ Added new header: "COMMENTS 11-03-2026"
+
 
 ## Notes
 

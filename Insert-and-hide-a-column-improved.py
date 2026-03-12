@@ -96,9 +96,9 @@ def copy_and_insert_comments_column(
     
     print(f"✓ Pasted data into new column {new_col_letter}")
 
-    # 5. Hide the new column
-    ws.column_dimensions[new_col_letter].hidden = True
-    print(f"✓ Hidden column {new_col_letter}")
+    # 5. Hide the previous column (the one we copied from)
+    ws.column_dimensions[last_col_letter].hidden = True
+    print(f"✓ Hidden previous column {last_col_letter}")
 
     # 6. Set new header with today's date
     today_str = datetime.today().strftime(date_format)
