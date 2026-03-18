@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 # script updated to look at production tracking folder. 
 base_dir = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\TRACKING\MARCH 2026"
-next_day = datetime.today() + timedelta(days=1)
+next_day = datetime.today() + timedelta(days=0)
 today_str = next_day.strftime("%d-%m-%Y")
 target_path = os.path.join(base_dir, today_str)
 
