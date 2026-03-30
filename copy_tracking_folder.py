@@ -31,9 +31,11 @@ shutil.copytree(latest_folder, target_path)
 # Rename files
 prefixes = {
     "BARTRAC - CONGO TRACKING":                   f"BARTRAC - CONGO TRACKING {today_str}.xlsx",
+    "BARTRAC - KAMOA TRACKING AS OF":             f"BARTRAC - KAMOA TRACKING AS OF {today_str}.xlsx",
     "BARTRAC - KCC TRACKING AS OF":               f"BARTRAC - KCC TRACKING AS OF {today_str}.xlsx",
     "BARTRAC - TRACKING - FML BONDED FACILITY -": f"BARTRAC - TRACKING - FML BONDED FACILITY - {today_str}.xlsx",
     "FML-KANU - ALLAN - TRACKING AS OF":          f"FML-KANU - ALLAN - TRACKING AS OF {today_str}.xlsx",
+    "BARTRAC - ERG TRACKING":                     f"BARTRAC - ERG TRACKING {today_str}.xlsx",
 }
 
 for fname in os.listdir(target_path):
