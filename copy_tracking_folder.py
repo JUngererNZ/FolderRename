@@ -3,7 +3,7 @@ import shutil
 from datetime import datetime
 
 # script updated to look at production tracking folder. 
-base_dir = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\TRACKING\MARCH 2026"
+base_dir = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\TRACKING\APRIL 2026"
 # base_dir = r"C:\Users\Jason\OneDrive - FML Freight Solutions\FML-PROJECTS\FolderRename\MARCH 2026"
 today_str = datetime.today().strftime("%d-%m-%Y")
 target_path = os.path.join(base_dir, today_str)
