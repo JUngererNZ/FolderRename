@@ -36,6 +36,7 @@ prefixes = {
     "BARTRAC - TRACKING - FML BONDED FACILITY -": f"BARTRAC - TRACKING - FML BONDED FACILITY - {today_str}.xlsx",
     "FML-KANU - ALLAN - TRACKING AS OF":          f"FML-KANU - ALLAN - TRACKING AS OF {today_str}.xlsx",
     "BARTRAC - ERG TRACKING":                     f"BARTRAC - ERG TRACKING {today_str}.xlsx",
+    "BARTRAC - SURYA MINES":                     f"BARTRAC - SURYA MINES {today_str}.xlsx",
 }
 
 for fname in os.listdir(target_path):
