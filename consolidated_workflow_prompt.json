@@ -1,0 +1,93 @@
+{
+  "role": "Python developer",
+  "objective": "Consolidate three existing scripts into one unified workflow and export the consolidated logic as a JSON configuration file.",
+  "current_state": {
+    "copy_tracking_folder.py": {
+      "purpose": "Copies the latest date-named subfolder (%d-%m-%Y) from a hardcoded base directory to a new subfolder named with the current date, then renames all .xlsx files in that folder based on hardcoded prefix mappings."
+    },
+    "script-MUMI-TRACKING.py": {
+      "purpose": "Duplicates the last 'COMMENTS DD-MM-YYYY' column in a specific Excel file, preserves formatting, and hides the original column."
+    },
+    "script-SURYA-MINES-TRACKING.py": {
+      "purpose": "Performs the same column duplication operation for a different Excel file."
+    }
+  },
+  "task": {
+    "analyze_files": [
+      "copy_tracking_folder.py",
+      "script-MUMI-TRACKING.py",
+      "script-SURYA-MINES-TRACKING.py"
+    ],
+    "build_unified_script": true,
+    "export_json_configuration": true
+  },
+  "workflow": {
+    "execution_order": [
+      {
+        "step": 1,
+        "name": "copy_and_rename",
+        "description": "Execute the copy and rename logic from copy_tracking_folder.py first."
+      },
+      {
+        "step": 2,
+        "name": "run_mumi_tracking_update",
+        "description": "After folder copy and rename, run the column duplication logic from script-MUMI-TRACKING.py on the appropriate renamed file in the new folder."
+      },
+      {
+        "step": 3,
+        "name": "run_surya_mines_tracking_update",
+        "description": "After the MUMI step, run the column duplication logic from script-SURYA-MINES-TRACKING.py on the appropriate renamed file in the new folder."
+      }
+    ]
+  },
+  "json_configuration_requirements": {
+    "purpose": "Document the consolidated workflow and all extracted hardcoded settings.",
+    "must_include": [
+      "base directories",
+      "file prefixes",
+      "sheet names",
+      "header rows",
+      "regex patterns",
+      "workflow steps",
+      "execution order",
+      "file mappings for each column-duplication operation"
+    ],
+    "format": "human-readable"
+  },
+  "key_requirements": [
+    "Match the existing code patterns from the uploaded scripts.",
+    "Preserve all existing functionality and error handling.",
+    "Target the renamed .xlsx files created during the copy-and-rename step.",
+    "Maintain all hardcoded configurations from the original scripts.",
+    "Handle errors gracefully and provide clear feedback on which step succeeded or failed.",
+    "Save all changes in place, as the original scripts do.",
+    "Generate the JSON configuration file alongside the unified script as documentation."
+  ],
+  "analysis_focus": {
+    "copy_tracking_folder.py": [
+      "directory structure",
+      "file naming conventions",
+      "prefix mapping logic"
+    ],
+    "script-MUMI-TRACKING.py": [
+      "column duplication logic",
+      "formatting preservation",
+      "error handling",
+      "sheet name",
+      "header row",
+      "column header pattern"
+    ],
+    "script-SURYA-MINES-TRACKING.py": [
+      "column duplication logic",
+      "formatting preservation",
+      "error handling",
+      "sheet name",
+      "header row",
+      "column header pattern"
+    ]
+  },
+  "deliverables": [
+    "One consolidated Python script that runs the full workflow in sequence.",
+    "One JSON configuration file documenting the workflow structure and all hardcoded parameters."
+  ]
+}
