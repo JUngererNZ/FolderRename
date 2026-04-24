@@ -1,3 +1,66 @@
+
+
+-----------------------------------------------
+24-04-2026
+
+This project automates the daily management of freight tracking files. It performs a multi-step workflow to prepare, update, and maintain your tracking documentation.
+
+Workflow Overview
+The script automates the following sequence:
+
+Directory Management: Locates the latest date-named folder from the base directory and copies it to a new folder named with today's date (%d-%m-%Y).
+
+File Renaming: Renames all .xlsx tracking files in the new folder based on predefined prefix mappings.
+
+Excel Updates: Sequentially processes specific tracking files to:
+
+Find the most recent "COMMENTS DD-MM-YYYY" column.
+
+Duplicate the column (preserving all formatting, comments, and merged ranges).
+
+Hide the original column to keep the tracking view clean.
+
+Save the updates in-place.
+
+Project Structure
+consolidated_workflow.py: The main Python script that executes the full workflow.
+
+tracking_workflow_config.json: The configuration file that defines which files to process, their sheet names, and header row locations.
+
+Configuration (tracking_workflow_config.json)
+All operational parameters are stored in the JSON configuration file. To add a new tracking file to the workflow, simply add an entry to the targets dictionary within the JSON:
+
+```
+{
+  "MUMI": {
+    "search_key": "MUMI",
+    "sheet_name": "ENROUTE SITE",
+    "header_row": 7
+  }
+}
+```
+search_key: A string used to identify the file (case-insensitive).
+
+sheet_name: The exact name of the worksheet to update.
+
+header_row: The row number containing the COMMENTS DD-MM-YYYY header.
+
+Requirements
+Python 3.14+
+
+Libraries: This script requires openpyxl.
+
+Install via pip: pip install openpyxl
+
+Usage
+Ensure consolidated_workflow.py and tracking_workflow_config.json are in the same directory, then run the script:
+
+Bash
+python consolidated_workflow.py
+
+
+-----------------------------------------------
+
 # Tracking Folder Copy Script
 
 This Python script automates the creation of daily tracking folders and files for FML Freight Solutions.
