@@ -3,6 +3,46 @@ Enhanced script to automatically find the last column, copy its data, insert a n
 This script improves upon the original by dynamically detecting the last column instead of using hardcoded positions.
 """
 
+"""
+Insert-and-hide-a-column-improved.py
+
+Enhanced version of Insert-and-hide-a-column.py — dynamically detects the last
+COMMENTS column instead of relying on hardcoded positions (e.g. MB/MC).
+
+Finds the rightmost column containing "COMMENTS" in its header (scanning the first
+10 rows), copies its data into a new column inserted immediately to its right,
+hides the original column, then writes a fresh 'COMMENTS DD-MM-YYYY' header into
+the new column. Fully replicates the weekly BARTRAC column-roll workflow without
+needing to know the current column position in advance.
+
+Usage:
+    python Insert-and-hide-a-column-improved.py <file.xlsx> [options]
+    python Insert-and-hide-a-column-improved.py              # opens file picker dialog
+
+    Options:
+        -s, --sheet         Target sheet name (default: active sheet)
+        -d, --date-format   Date format string (default: %d-%m-%Y)
+        -b, --backup        Create a .backup.xlsx copy before modifying
+
+Examples:
+    python Insert-and-hide-a-column-improved.py "BARTRAC - KCC TRACKING.xlsx" --backup
+    python Insert-and-hide-a-column-improved.py "BARTRAC - KCC TRACKING.xlsx" -s "ENROUTE SITE"
+
+Improvement over Insert-and-hide-a-column.py:
+    - No hardcoded column positions — works regardless of how many COMMENTS
+      columns have accumulated in the workbook
+    - Adds a tkinter file picker dialog as fallback when no file argument is given
+    - Removes the separate --insert-column and --header-column arguments;
+      positions are derived automatically at runtime
+
+Limitations:
+    - openpyxl does not preserve macros or some advanced Excel formatting
+    - COMMENTS header detection is case-insensitive but requires the word
+      'COMMENTS' to be present — variant headers will be missed
+    - Does not read tracking_workflow_config.json — sheet must still be
+      supplied manually per client if not the active sheet
+"""
+
 import argparse
 import tkinter as tk
 from tkinter import filedialog

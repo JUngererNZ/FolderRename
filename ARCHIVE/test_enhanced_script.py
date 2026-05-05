@@ -4,6 +4,39 @@ Test script to validate the enhanced copy-insert-hide-column.py functionality.
 This script creates a test Excel file and runs the enhanced script on it.
 """
 
+"""
+test_enhanced_script.py
+
+Unit test harness for copy-insert-hide-column.py (the xlwings-based version).
+
+Creates a temporary Excel workbook with synthetic BARTRAC-style data — five columns
+of row data plus a row of COMMENTS headers (COMMENTS 10-03-2026 through
+COMMENTS 30-03-2026) — runs the enhanced script against it as a subprocess,
+then verifies the output using xlwings before cleaning up the temp file.
+
+Usage:
+    python test_enhanced_script.py
+
+    No arguments required. Test file is created, used, and deleted automatically.
+
+Test sequence:
+    1. Create  — builds a temp .xlsx with known structure via xlwings
+    2. Execute — runs copy-insert-hide-column.py with --backup flag as subprocess
+    3. Verify  — checks that the new column is hidden, original data is preserved,
+                 and copied data matches the source column
+    4. Cleanup — deletes the temp file regardless of pass/fail
+
+Dependencies:
+    - copy-insert-hide-column.py must exist in the same directory
+    - Requires xlwings and a running Excel instance (Windows/macOS)
+
+Limitations:
+    - Tests against copy-insert-hide-column.py only — not the openpyxl-based scripts
+    - Synthetic test data uses row 6 for COMMENTS headers; real workbooks vary
+      by client (see tracking_workflow_config.json for header row positions)
+    - No CI/headless support — xlwings requires Excel to be installed and accessible
+"""
+
 import xlwings as xw
 import tempfile
 import os

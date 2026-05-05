@@ -1,4 +1,40 @@
 """
+Insert-and-hide-a-column.py
+
+Python/openpyxl replication of Script-2.osts (the Office Script recorded in Excel).
+
+Inserts a new blank column at a specified position, hides it, then writes a dated
+'COMMENTS DD-MM-YYYY' header into the next column — matching the manual workflow
+performed weekly on BARTRAC tracking workbooks.
+
+Usage:
+    python Insert-and-hide-a-column.py <file.xlsx> [options]
+
+    Options:
+        -s, --sheet           Target sheet name (default: active sheet)
+        -i, --insert-column   Column to insert at (default: MB)
+        -c, --header-column   Column to write dated header into (default: MC)
+        -d, --date-format     Date format string (default: %d-%m-%Y)
+        -b, --backup          Create a .backup.xlsx copy before modifying
+
+Examples:
+    python Insert-and-hide-a-column.py "BARTRAC - KCC TRACKING.xlsx" --backup
+    python Insert-and-hide-a-column.py "BARTRAC - KCC TRACKING.xlsx" -s "ENROUTE SITE" -i MB -c MC
+
+Difference from duplicate_hide_mk_column.py:
+    - This script inserts a blank hidden column and adds a new dated header
+    - The other script duplicates an existing COMMENTS column then hides the copy
+    - These are complementary steps: run duplicate_hide_mk_column.py first to
+      preserve last week's comments, then this script to create the new week's column
+
+Limitations:
+    - openpyxl does not preserve macros or some advanced Excel formatting
+    - Column positions (MB/MC) must match the current state of the workbook
+    - Does not read tracking_workflow_config.json — sheet and column args must be
+      supplied manually per client
+"""
+
+"""
 Insert and hide a column, then add a dated comment header.
 Replicates the behavior of Script-2.osts for local Excel files.
 """

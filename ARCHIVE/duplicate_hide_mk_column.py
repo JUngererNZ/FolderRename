@@ -1,3 +1,28 @@
+"""
+duplicate_hide_mk_column.py
+
+openpyxl-based alternative to copy-insert-hide-column.py for BARTRAC tracking workbooks.
+
+Searches row 1 of the active sheet for the rightmost column matching 'COMMENTS DD-MM-YYYY',
+inserts a hidden duplicate column to its left, then saves the file in-place.
+Designed for the KCC tracking workbook but usable on any conforming BARTRAC sheet.
+
+Usage:
+    Update the file_path variable at the bottom and run directly:
+    python duplicate_hide_mk_column.py
+
+Difference from copy-insert-hide-column.py:
+    - Uses openpyxl (no Excel/COM dependency) — runs headless, no Excel install needed
+    - Searches row 1 only (vs row 6 in the xlwings version)
+    - No CLI arguments or --backup flag
+    - File path is hardcoded at the bottom rather than passed as an argument
+
+Limitations:
+    - Targets active sheet only — does not use tracking_workflow_config.json
+    - Hardcoded file path must be updated manually per run
+    - openpyxl does not preserve all Excel features (macros, some formatting)
+"""
+
 import openpyxl
 from openpyxl.utils import column_index_from_string, get_column_letter
 import re

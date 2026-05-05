@@ -1,3 +1,22 @@
+"""
+copy-insert-hide-column.py
+
+Automates the copy → insert → hide column operation on BARTRAC Excel tracking workbooks.
+
+Scans a specified row for the rightmost column matching the pattern 'COMMENTS DD-MM-YYYY',
+copies its data, inserts a hidden duplicate column to its left, then saves the file.
+This preserves the previous week's comments before a new dated column is added.
+
+Usage:
+    python copy-insert-hide-column.py <file.xlsx> [--backup]
+
+Notes:
+    - SEARCH_ROW defaults to 6 — adjust per client (see tracking_workflow_config.json)
+    - Targets the active sheet; ensure the correct sheet is active before running
+    - --backup creates a .bak.xlsx copy before any modifications
+"""
+
+
 import xlwings as xw
 import argparse
 import re

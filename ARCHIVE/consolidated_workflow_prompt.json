@@ -1,4 +1,25 @@
 {
+  "_synopsis": {
+    "file": "consolidated_workflow_prompt.json",
+    "description": "Prompt specification (not a runnable script) used to instruct an AI assistant or developer to consolidate three standalone scripts into a single unified workflow. Defines the execution order, analysis scope, configuration export requirements, and deliverables for the consolidation task.",
+    "intended_use": "Feed this JSON to an AI coding assistant (e.g. Claude, Copilot) along with the three source scripts to generate the unified script and companion config file in one pass.",
+    "source_scripts": {
+      "copy_tracking_folder.py":        "Copies and date-renames the latest tracking subfolder and renames .xlsx files by prefix",
+      "script-MUMI-TRACKING.py":        "Duplicates last COMMENTS column, preserves formatting, hides original — MUMI workbook",
+      "script-SURYA-MINES-TRACKING.py": "Same column duplication operation — SURYA MINES workbook"
+    },
+    "execution_order": [
+      "1. copy_and_rename       — folder copy and .xlsx rename",
+      "2. run_mumi_tracking_update     — COMMENTS column duplication on MUMI file",
+      "3. run_surya_mines_tracking_update — COMMENTS column duplication on SURYA MINES file"
+    ],
+    "deliverables": [
+      "Unified Python script running all three steps in sequence",
+      "JSON configuration file externalising all hardcoded parameters"
+    ],
+    "status": "Prompt only — source scripts (copy_tracking_folder.py, script-MUMI-TRACKING.py, script-SURYA-MINES-TRACKING.py) must be supplied separately to execute the consolidation task."
+  }
+}{
   "role": "Python developer",
   "objective": "Consolidate three existing scripts into one unified workflow and export the consolidated logic as a JSON configuration file.",
   "current_state": {
