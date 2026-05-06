@@ -14,6 +14,8 @@ Notes:
     - SEARCH_ROW defaults to 6 — adjust per client (see tracking_workflow_config.json)
     - Targets the active sheet; ensure the correct sheet is active before running
     - --backup creates a .bak.xlsx copy before any modifications
+    {b5d0cfc3-57b4-492a-bb1b-53fbc01c1f08}
+
 """
 
 
