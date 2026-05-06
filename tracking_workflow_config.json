@@ -1,7 +1,7 @@
 {
   "_synopsis": {
     "file": "tracking_workflow_config.json",
-    "description": "Central configuration mapping BARTRAC client targets to their Excel sheet names and header row positions. Consumed by the copy-insert-hide column scripts to determine where to search for COMMENTS headers per client workbook.",
+    "description": "Central configuration mapping BARTRAC client targets...",
     "structure": "workflow > configurations > excel_operations > targets",
     "clients": {
       "MUMI":        {"sheet": "ENROUTE SITE",      "header_row": 7},
@@ -18,18 +18,12 @@
     ]
   },
   "workflow": {
-    ...
-  }
-}
-
-{
-  "workflow": {
     "configurations": {
       "excel_operations": {
         "targets": {
           "MUMI": {"search_key": "MUMI", "sheet_name": "ENROUTE SITE", "header_row": 7},
           "SURYA_MINES": {"search_key": "SURYA MINES", "sheet_name": "CURRENT SHIPMENTS ", "header_row": 1},
-          "ERG": {"search_key": "ERG", "sheet_name": "CURRENT SHIPMENTS ", "header_row": 1},
+          "ERG": {"search_key": "ERG", "search_key": "ERG", "sheet_name": "CURRENT SHIPMENTS ", "header_row": 1},
           "KAMOA": {"search_key": "KAMOA", "sheet_name": "ENROUTE SITE", "header_row": 7},
           "KCC": {"search_key": "KCC", "sheet_name": "ENROUTE SITE", "header_row": 6},
           "CONGO": {"search_key": "CONGO", "sheet_name": "CURRENT SHIPMENTS ", "header_row": 1}
