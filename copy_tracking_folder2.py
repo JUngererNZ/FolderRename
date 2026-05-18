@@ -26,6 +26,7 @@ PREFIXES = {
     "FML-KANU - ALLAN - TRACKING AS OF":          f"FML-KANU - ALLAN - TRACKING AS OF {TODAY_STR}.xlsx",
     "BARTRAC - ERG TRACKING":                     f"BARTRAC - ERG TRACKING {TODAY_STR}.xlsx",
     "BARTRAC - SURYA MINES":                      f"BARTRAC - SURYA MINES {TODAY_STR}.xlsx",
+    "BARTRAC - MUMI TRACKING AS OF":              f"BARTRAC - MUMI TRACKING AS OF {TODAY_STR}.xlsx",
 }
 
 def load_config(config_file="tracking_workflow_config.json"):
