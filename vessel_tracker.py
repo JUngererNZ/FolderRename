@@ -1,3 +1,6 @@
+# -------------------------------
+# initial commit 12.06.2026 12:13, there is new data coming
+# -------------------------------
 import asyncio
 import json
 import pandas as pd
@@ -14,26 +17,21 @@ import websockets
 # -------------------------------
 EXCEL_FILE = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\BARTRAC\CARGO TO ARRIVE AT DBN PORT\VESSEL UPDATES.xlsx"
 SHEET_NAME = "VESSEL ETA"
-COLUMN_BA = "BA NUMBER"
-COLUMN_VESSEL = "VESESL"
-COLUMN_ETA = "ETA DURBAN"
 
 AISSTREAM_API_KEY = "4a90079dd212f4fc6ecf85c536477e0c974b8bb5"
 
 # MAPPING: vessel base name -> MMSI (YOU MUST FILL THIS!)
 VESSEL_MMSI_MAP = {
     "ASIAN EMPIRE": 440114000,
-    "HAN JIANG KOU": 0,             # replace
-    "MORNING CELLO": 0,             # replace
-    "HOEGH TRACER": 0,              # replace
-    # Add others as needed
+    "HAN JIANG KOU": 0,
+    "MORNING CELLO": 0,
+    "HOEGH TRACER": 0,
 }
 
 # -------------------------------
-# Helper: create a shadow copy of a possibly locked file
+# Helper: create a shadow copy
 # -------------------------------
 def get_readable_copy(source_path, max_retries=3, retry_delay=1):
-    """Copy source to a temp file, retrying if locked."""
     for attempt in range(max_retries):
         try:
             ext = os.path.splitext(source_path)[1]
@@ -64,7 +62,7 @@ def split_vessel_name(raw_name):
         return raw_name.strip(), None
 
 # -------------------------------
-# Fetch live data via AISStream WebSocket
+# Fetch live data via AISStream
 # -------------------------------
 async def fetch_live_data(mmsi_list):
     if not mmsi_list:
@@ -132,7 +130,7 @@ async def fetch_live_data(mmsi_list):
         return result
 
 # -------------------------------
-# Convert AISStream data to friendly fields
+# Convert AISStream data
 # -------------------------------
 def extract_vessel_info(live_data, mmsi):
     if mmsi not in live_data:
@@ -186,7 +184,7 @@ async def main():
         print(f"ERROR: File not found at {EXCEL_FILE}")
         return
     
-    # Create shadow copy to avoid lock issues (e.g., OneDrive)
+    # Shadow copy
     shadow = get_readable_copy(EXCEL_FILE)
     if shadow:
         df = pd.read_excel(shadow, sheet_name=SHEET_NAME, dtype=str)
@@ -196,8 +194,50 @@ async def main():
         print("Unable to create shadow copy. Attempting to read original directly...")
         df = pd.read_excel(EXCEL_FILE, sheet_name=SHEET_NAME, dtype=str)
     
-    df_filtered = df[[COLUMN_BA, COLUMN_VESSEL, COLUMN_ETA]].dropna()
-    df_filtered = df_filtered[~df_filtered[COLUMN_VESSEL].str.upper().str.contains("TBA", na=False)]
+    # ----- DIAGNOSTIC: print columns and first rows -----
+    print("\n📋 Actual column names in the Excel file:")
+    print(df.columns.tolist())
+    print("\n📄 First few rows:")
+    print(df.head(3))
+    # ---------------------------------------------------
+    
+    # Try to find the correct column names (case‑insensitive, strip spaces)
+    col_map = {}
+    target_cols = ["BA NUMBER", "VESESL", "ETA DURBAN"]
+    for actual in df.columns:
+        actual_clean = str(actual).strip().upper()
+        for target in target_cols:
+            if actual_clean == target or actual_clean == target.replace(" ", "_"):
+                col_map[target] = actual
+                break
+        # fallback: partial match
+        for target in target_cols:
+            if target.replace(" ", "").upper() in actual_clean:
+                col_map[target] = actual
+                break
+    
+    # If still missing, ask user
+    for target in target_cols:
+        if target not in col_map:
+            print(f"\n⚠️ Could not find column '{target}' automatically.")
+            print("Available columns:", df.columns.tolist())
+            print("Please enter the correct column name (or press Enter to skip):")
+            user_col = input(f"Column for {target}: ").strip()
+            if user_col and user_col in df.columns:
+                col_map[target] = user_col
+            else:
+                print(f"Column '{user_col}' not found. Skipping this data.")
+                return
+    
+    ba_col = col_map["BA NUMBER"]
+    vessel_col = col_map["VESESL"]
+    eta_col = col_map["ETA DURBAN"]
+    
+    print(f"\n✅ Using columns: BA={ba_col}, Vessel={vessel_col}, ETA={eta_col}")
+    
+    # Filter rows
+    df_filtered = df[[ba_col, vessel_col, eta_col]].dropna()
+    df_filtered = df_filtered[~df_filtered[vessel_col].str.upper().str.contains("TBA", na=False)]
     
     if df_filtered.empty:
         print("No valid rows found.")
@@ -208,9 +248,9 @@ async def main():
     pending_rows = []
     
     for idx, row in df_filtered.iterrows():
-        ba = row[COLUMN_BA]
-        raw_vessel = row[COLUMN_VESSEL]
-        eta_file = row[COLUMN_ETA]
+        ba = row[ba_col]
+        raw_vessel = row[vessel_col]
+        eta_file = row[eta_col]
         base, voyage = split_vessel_name(raw_vessel)
         
         if not base:
@@ -240,7 +280,7 @@ async def main():
             "skip": False
         })
     
-    # Collect live data for MMSIs that exist (>0)
+    # Collect live data
     mmsi_list = [m for m in base_to_mmsi.values() if m and m > 0]
     live_data = {}
     if mmsi_list:
