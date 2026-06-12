@@ -1,6 +1,3 @@
-# -------------------------------
-# initial commit 12.06.2026 12:13, there is new data coming
-# -------------------------------
 import asyncio
 import json
 import pandas as pd
@@ -13,7 +10,7 @@ from datetime import datetime
 import websockets
 
 # -------------------------------
-# CONFIGURATION
+# CONFIGURATION 4
 # -------------------------------
 EXCEL_FILE = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\BARTRAC\CARGO TO ARRIVE AT DBN PORT\VESSEL UPDATES.xlsx"
 SHEET_NAME = "VESSEL ETA"
@@ -187,60 +184,46 @@ async def main():
     # Shadow copy
     shadow = get_readable_copy(EXCEL_FILE)
     if shadow:
-        df = pd.read_excel(shadow, sheet_name=SHEET_NAME, dtype=str)
+        # Read with header=1 (second row) to get correct column names
+        df = pd.read_excel(shadow, sheet_name=SHEET_NAME, header=1, dtype=str)
         os.unlink(shadow)
         print("Shadow copy removed.")
     else:
         print("Unable to create shadow copy. Attempting to read original directly...")
-        df = pd.read_excel(EXCEL_FILE, sheet_name=SHEET_NAME, dtype=str)
+        df = pd.read_excel(EXCEL_FILE, sheet_name=SHEET_NAME, header=1, dtype=str)
     
-    # ----- DIAGNOSTIC: print columns and first rows -----
-    print("\n📋 Actual column names in the Excel file:")
-    print(df.columns.tolist())
-    print("\n📄 First few rows:")
-    print(df.head(3))
-    # ---------------------------------------------------
+    # Remove rows where BA NUMBER is empty or contains month/year like "JUNE 2026"
+    # The BA column after header is likely named "BA NUMBER" (as shown in row 1)
+    # We'll rename columns by stripping spaces and standardizing
+    df.columns = df.columns.str.strip()
     
-    # Try to find the correct column names (case‑insensitive, strip spaces)
-    col_map = {}
-    target_cols = ["BA NUMBER", "VESESL", "ETA DURBAN"]
-    for actual in df.columns:
-        actual_clean = str(actual).strip().upper()
-        for target in target_cols:
-            if actual_clean == target or actual_clean == target.replace(" ", "_"):
-                col_map[target] = actual
-                break
-        # fallback: partial match
-        for target in target_cols:
-            if target.replace(" ", "").upper() in actual_clean:
-                col_map[target] = actual
-                break
+    # Filter out rows where BA NUMBER is NaN or is a month string (like JUNE 2026)
+    if "BA NUMBER" in df.columns:
+        df = df.dropna(subset=["BA NUMBER"])
+        df = df[~df["BA NUMBER"].astype(str).str.contains(r'JUNE|JULY|AUGUST|SEPTEMBER', case=False, na=False)]
+    else:
+        print("Column 'BA NUMBER' not found after reading with header=1. Available columns:", df.columns.tolist())
+        return
     
-    # If still missing, ask user
-    for target in target_cols:
-        if target not in col_map:
-            print(f"\n⚠️ Could not find column '{target}' automatically.")
-            print("Available columns:", df.columns.tolist())
-            print("Please enter the correct column name (or press Enter to skip):")
-            user_col = input(f"Column for {target}: ").strip()
-            if user_col and user_col in df.columns:
-                col_map[target] = user_col
-            else:
-                print(f"Column '{user_col}' not found. Skipping this data.")
-                return
+    # Now we have the correct data rows. Also, some rows may have vessel names like "TBA" - we'll keep them for now
+    # but later skip if vessel name is missing or TBA.
     
-    ba_col = col_map["BA NUMBER"]
-    vessel_col = col_map["VESESL"]
-    eta_col = col_map["ETA DURBAN"]
+    # Check we have the required columns
+    required = ["BA NUMBER", "VESESL", "ETA DURBAN"]
+    missing = [c for c in required if c not in df.columns]
+    if missing:
+        print(f"Missing required columns: {missing}")
+        print("Available columns:", df.columns.tolist())
+        return
     
-    print(f"\n✅ Using columns: BA={ba_col}, Vessel={vessel_col}, ETA={eta_col}")
+    print(f"\n✅ Using columns: BA NUMBER, VESESL, ETA DURBAN")
     
-    # Filter rows
-    df_filtered = df[[ba_col, vessel_col, eta_col]].dropna()
-    df_filtered = df_filtered[~df_filtered[vessel_col].str.upper().str.contains("TBA", na=False)]
+    # Filter rows that have vessel name and ETA (drop rows where vessel is empty or TBA)
+    df_filtered = df[required].dropna(subset=["VESESL", "ETA DURBAN"])
+    df_filtered = df_filtered[~df_filtered["VESESL"].str.upper().str.contains("TBA", na=False)]
     
     if df_filtered.empty:
-        print("No valid rows found.")
+        print("No valid rows found after filtering.")
         return
     
     # Build list of unique vessel base names
@@ -248,9 +231,9 @@ async def main():
     pending_rows = []
     
     for idx, row in df_filtered.iterrows():
-        ba = row[ba_col]
-        raw_vessel = row[vessel_col]
-        eta_file = row[eta_col]
+        ba = row["BA NUMBER"]
+        raw_vessel = row["VESESL"]
+        eta_file = row["ETA DURBAN"]
         base, voyage = split_vessel_name(raw_vessel)
         
         if not base:
@@ -280,7 +263,7 @@ async def main():
             "skip": False
         })
     
-    # Collect live data
+    # Collect live data for MMSIs that exist (>0)
     mmsi_list = [m for m in base_to_mmsi.values() if m and m > 0]
     live_data = {}
     if mmsi_list:
