@@ -10,23 +10,28 @@ from datetime import datetime
 import websockets
 
 # -------------------------------
-# CONFIGURATION 4
+# CONFIGURATION
 # -------------------------------
 EXCEL_FILE = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\BARTRAC\CARGO TO ARRIVE AT DBN PORT\VESSEL UPDATES.xlsx"
 SHEET_NAME = "VESSEL ETA"
-
 AISSTREAM_API_KEY = "4a90079dd212f4fc6ecf85c536477e0c974b8bb5"
-
-# MAPPING: vessel base name -> MMSI (YOU MUST FILL THIS!)
-VESSEL_MMSI_MAP = {
-    "ASIAN EMPIRE": 440114000,
-    "HAN JIANG KOU": 0,
-    "MORNING CELLO": 0,
-    "HOEGH TRACER": 0,
-}
+MMSI_CONFIG_FILE = "vessel_mmsi_config.json"
 
 # -------------------------------
-# Helper: create a shadow copy
+# Load MMSI config
+# -------------------------------
+def load_mmsi_config():
+    if os.path.exists(MMSI_CONFIG_FILE):
+        with open(MMSI_CONFIG_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    else:
+        print(f"⚠️ Config file {MMSI_CONFIG_FILE} not found. Using empty mapping.")
+        return {}
+
+VESSEL_MMSI_MAP = load_mmsi_config()
+
+# -------------------------------
+# Shadow copy for locked files
 # -------------------------------
 def get_readable_copy(source_path, max_retries=3, retry_delay=1):
     for attempt in range(max_retries):
@@ -44,7 +49,7 @@ def get_readable_copy(source_path, max_retries=3, retry_delay=1):
     return None
 
 # -------------------------------
-# Helper: split vessel name
+# Split vessel name
 # -------------------------------
 def split_vessel_name(raw_name):
     if pd.isna(raw_name) or raw_name == "":
@@ -59,75 +64,76 @@ def split_vessel_name(raw_name):
         return raw_name.strip(), None
 
 # -------------------------------
-# Fetch live data via AISStream
+# Fetch live data (using API key as query param)
 # -------------------------------
 async def fetch_live_data(mmsi_list):
     if not mmsi_list:
         return {}
     
-    uri = "wss://stream.aisstream.io/v2/stream"
+    uri = f"wss://stream.aisstream.io/v2?apiKey={AISSTREAM_API_KEY}"
     result = {}
     
-    async with websockets.connect(uri, subprotocols=["graphql-ws"]) as websocket:
-        await websocket.send(json.dumps({
-            "type": "connection_init",
-            "payload": {"headers": {"X-API-Key": AISSTREAM_API_KEY}}
-        }))
-        init_resp = await websocket.recv()
-        print(f"Connection init response: {init_resp}")
-        
-        subscribe_msg = {
-            "type": "subscribe",
-            "id": "1",
-            "payload": {
-                "query": f"""subscription {{
-                    vessels(
-                        mmsi: {json.dumps(mmsi_list)}
-                        messageTypes: ["PositionReport", "ShipStaticData"]
-                    ) {{
-                        mmsi
-                        timestamp
-                        positionReport {{
-                            latitude
-                            longitude
-                            sog
-                            cog
+    try:
+        async with websockets.connect(uri, subprotocols=["graphql-ws"]) as websocket:
+            await websocket.send(json.dumps({"type": "connection_init"}))
+            init_resp = await websocket.recv()
+            print(f"Connection response: {init_resp}")
+            
+            subscribe_msg = {
+                "type": "subscribe",
+                "id": "1",
+                "payload": {
+                    "query": f"""subscription {{
+                        vessels(
+                            mmsi: {json.dumps(mmsi_list)}
+                            messageTypes: ["PositionReport", "ShipStaticData"]
+                        ) {{
+                            mmsi
+                            timestamp
+                            positionReport {{
+                                latitude
+                                longitude
+                                sog
+                                cog
+                            }}
+                            shipStaticData {{
+                                destination
+                                eta
+                            }}
                         }}
-                        shipStaticData {{
-                            destination
-                            eta
-                        }}
-                    }}
-                }}"""
+                    }}"""
+                }
             }
-        }
-        await websocket.send(json.dumps(subscribe_msg))
-        print("Subscribed, waiting for data...")
-        
-        start_time = time.time()
-        timeout = 15
-        
-        while time.time() - start_time < timeout:
-            try:
-                message = await asyncio.wait_for(websocket.recv(), timeout=1)
-                data = json.loads(message)
-                if 'payload' in data and 'data' in data['payload']:
-                    vessel = data['payload']['data']['vessels']
-                    if vessel and vessel.get('mmsi'):
-                        mmsi = vessel['mmsi']
-                        result[mmsi] = {
-                            "timestamp": vessel.get('timestamp'),
-                            "position_report": vessel.get('positionReport'),
-                            "static_data": vessel.get('shipStaticData')
-                        }
-            except asyncio.TimeoutError:
-                continue
-        
-        print(f"Collected data for {len(result)} vessels.")
-        return result
+            await websocket.send(json.dumps(subscribe_msg))
+            print("Subscribed, waiting for data...")
+            
+            start_time = time.time()
+            timeout = 15
+            
+            while time.time() - start_time < timeout:
+                try:
+                    message = await asyncio.wait_for(websocket.recv(), timeout=1)
+                    data = json.loads(message)
+                    if data.get("type") == "data" and "payload" in data:
+                        vessel_data = data["payload"]["data"].get("vessels")
+                        if vessel_data and vessel_data.get("mmsi"):
+                            mmsi = vessel_data["mmsi"]
+                            result[mmsi] = {
+                                "timestamp": vessel_data.get("timestamp"),
+                                "position_report": vessel_data.get("positionReport"),
+                                "static_data": vessel_data.get("shipStaticData")
+                            }
+                except asyncio.TimeoutError:
+                    continue
+            
+            print(f"Collected data for {len(result)} vessels.")
+            return result
+    except Exception as e:
+        print(f"WebSocket error: {e}")
+        return {}
 
 # -------------------------------
-# Convert AISStream data
+# Extract vessel info from live data
 # -------------------------------
 def extract_vessel_info(live_data, mmsi):
     if mmsi not in live_data:
@@ -156,7 +162,7 @@ def extract_vessel_info(live_data, mmsi):
     }
 
 # -------------------------------
-# Compare file ETA with live info
+# Determine status
 # -------------------------------
 def compute_status(file_eta_str, live_info):
     try:
@@ -173,7 +179,7 @@ def compute_status(file_eta_str, live_info):
         return "No live position available"
 
 # -------------------------------
-# Main routine
+# Main
 # -------------------------------
 async def main():
     print(f"Reading Excel file: {EXCEL_FILE}")
@@ -181,56 +187,41 @@ async def main():
         print(f"ERROR: File not found at {EXCEL_FILE}")
         return
     
-    # Shadow copy
     shadow = get_readable_copy(EXCEL_FILE)
     if shadow:
-        # Read with header=1 (second row) to get correct column names
         df = pd.read_excel(shadow, sheet_name=SHEET_NAME, header=1, dtype=str)
         os.unlink(shadow)
         print("Shadow copy removed.")
     else:
-        print("Unable to create shadow copy. Attempting to read original directly...")
         df = pd.read_excel(EXCEL_FILE, sheet_name=SHEET_NAME, header=1, dtype=str)
     
-    # Remove rows where BA NUMBER is empty or contains month/year like "JUNE 2026"
-    # The BA column after header is likely named "BA NUMBER" (as shown in row 1)
-    # We'll rename columns by stripping spaces and standardizing
     df.columns = df.columns.str.strip()
-    
-    # Filter out rows where BA NUMBER is NaN or is a month string (like JUNE 2026)
     if "BA NUMBER" in df.columns:
         df = df.dropna(subset=["BA NUMBER"])
         df = df[~df["BA NUMBER"].astype(str).str.contains(r'JUNE|JULY|AUGUST|SEPTEMBER', case=False, na=False)]
     else:
-        print("Column 'BA NUMBER' not found after reading with header=1. Available columns:", df.columns.tolist())
+        print("Column 'BA NUMBER' not found. Available:", df.columns.tolist())
         return
     
-    # Now we have the correct data rows. Also, some rows may have vessel names like "TBA" - we'll keep them for now
-    # but later skip if vessel name is missing or TBA.
-    
-    # Check we have the required columns
     required = ["BA NUMBER", "VESESL", "ETA DURBAN"]
     missing = [c for c in required if c not in df.columns]
     if missing:
-        print(f"Missing required columns: {missing}")
-        print("Available columns:", df.columns.tolist())
+        print(f"Missing columns: {missing}")
         return
     
     print(f"\n✅ Using columns: BA NUMBER, VESESL, ETA DURBAN")
     
-    # Filter rows that have vessel name and ETA (drop rows where vessel is empty or TBA)
     df_filtered = df[required].dropna(subset=["VESESL", "ETA DURBAN"])
     df_filtered = df_filtered[~df_filtered["VESESL"].str.upper().str.contains("TBA", na=False)]
     
     if df_filtered.empty:
-        print("No valid rows found after filtering.")
+        print("No valid rows found.")
         return
     
-    # Build list of unique vessel base names
     base_to_mmsi = {}
     pending_rows = []
     
-    for idx, row in df_filtered.iterrows():
+    for _, row in df_filtered.iterrows():
         ba = row["BA NUMBER"]
         raw_vessel = row["VESESL"]
         eta_file = row["ETA DURBAN"]
@@ -263,16 +254,14 @@ async def main():
             "skip": False
         })
     
-    # Collect live data for MMSIs that exist (>0)
     mmsi_list = [m for m in base_to_mmsi.values() if m and m > 0]
     live_data = {}
     if mmsi_list:
         print(f"Fetching live data for MMSIs: {mmsi_list}")
         live_data = await fetch_live_data(mmsi_list)
     else:
-        print("No valid MMSI numbers provided; skipping live fetch.")
+        print("No valid MMSI numbers; skipping live fetch.")
     
-    # Build final results
     final = []
     for row in pending_rows:
         if row["skip"]:
@@ -285,7 +274,8 @@ async def main():
                 "Current Port": "N/A",
                 "Destination": "N/A",
                 "Live ETA": "N/A",
-                "Status": row["reason"]
+                "Status": row["reason"],
+                "MMSI": None
             })
             continue
         
@@ -294,9 +284,11 @@ async def main():
         if mmsi and mmsi in live_data:
             live_info = extract_vessel_info(live_data, mmsi)
             status = compute_status(row["eta_file"], live_info)
+            final_mmsi = mmsi
         else:
             live_info = {"current_port": "N/A", "destination": "N/A", "live_eta": "N/A"}
-            status = "No MMSI or no live data (vessel not transmitting?)"
+            status = "No MMSI or no live data"
+            final_mmsi = mmsi if mmsi else None
         
         final.append({
             "BA": row["BA"],
@@ -307,10 +299,10 @@ async def main():
             "Current Port": live_info["current_port"],
             "Destination": live_info["destination"],
             "Live ETA": live_info["live_eta"],
-            "Status": status
+            "Status": status,
+            "MMSI": final_mmsi
         })
     
-    # Save reports
     output_json = "vessel_report.json"
     output_csv = "vessel_report.csv"
     with open(output_json, "w", encoding="utf-8") as f:

@@ -1,0 +1,18 @@
+{
+  "440114000": {
+    "mmsi": 440114000,
+    "status": "Error: 401 Client Error: NOT AUTHORIZED for url: https://ais.marineplan.com/location/2/ship.json?ship=440114000&source=AIS"
+  },
+  "636022934": {
+    "mmsi": 636022934,
+    "status": "Error: 401 Client Error: NOT AUTHORIZED for url: https://ais.marineplan.com/location/2/ship.json?ship=636022934&source=AIS"
+  },
+  "441390000": {
+    "mmsi": 441390000,
+    "status": "Error: 401 Client Error: NOT AUTHORIZED for url: https://ais.marineplan.com/location/2/ship.json?ship=441390000&source=AIS"
+  },
+  "258628000": {
+    "mmsi": 258628000,
+    "status": "Error: 401 Client Error: NOT AUTHORIZED for url: https://ais.marineplan.com/location/2/ship.json?ship=258628000&source=AIS"
+  }
+}

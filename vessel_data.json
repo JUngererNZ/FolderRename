@@ -1,0 +1,106 @@
+{
+    "636022934": {
+        "static": {
+            "vessel_name": "HAN JIANG KOU",
+            "imo": "9985409",
+            "mmsi": "636022934",
+            "callsign": "5LLD4",
+            "ais_type": "Cargo ship",
+            "flag": "Liberia",
+            "length_beam": "200 / 38 m"
+        },
+        "position": {
+            "status": "-",
+            "course_speed": "51.3\u00b0 / 18.3 kn",
+            "current_draught": "7.4 m",
+            "navigation_status": "-",
+            "position_received": "4 days ago",
+            "latitude": "-",
+            "longitude": "-",
+            "last_port": "-",
+            "atd": "-"
+        },
+        "eta": {
+            "destination": "-",
+            "eta": "-"
+        }
+    },
+    "440114000": {
+        "static": {
+            "vessel_name": "ASIAN EMPIRE",
+            "imo": "9176606",
+            "mmsi": "440114000",
+            "callsign": "D7ML",
+            "ais_type": "Cargo ship",
+            "flag": "Korea",
+            "length_beam": "229 / 32 m"
+        },
+        "position": {
+            "status": "Moored",
+            "course_speed": "328.7\u00b0 / 0.0 kn",
+            "current_draught": "8.8 m",
+            "navigation_status": "Moored",
+            "position_received": "2 min ago",
+            "latitude": "-",
+            "longitude": "-",
+            "last_port": "-",
+            "atd": "-"
+        },
+        "eta": {
+            "destination": "-",
+            "eta": "-"
+        }
+    },
+    "258628000": {
+        "static": {
+            "vessel_name": "HOEGH TRACER",
+            "imo": "9684990",
+            "mmsi": "258628000",
+            "callsign": "LAUL7",
+            "ais_type": "Cargo ship",
+            "flag": "Norway",
+            "length_beam": "200 / 36 m"
+        },
+        "position": {
+            "status": "-",
+            "course_speed": "180.3\u00b0 / 15.3 kn",
+            "current_draught": "10.0 m",
+            "navigation_status": "-",
+            "position_received": "2 days ago",
+            "latitude": "-",
+            "longitude": "-",
+            "last_port": "-",
+            "atd": "-"
+        },
+        "eta": {
+            "destination": "-",
+            "eta": "-"
+        }
+    },
+    "441390000": {
+        "static": {
+            "vessel_name": "MORNING CELLO",
+            "imo": "9329461",
+            "mmsi": "441390000",
+            "callsign": "D8CA",
+            "ais_type": "Cargo ship",
+            "flag": "Korea",
+            "length_beam": "200 / 32 m"
+        },
+        "position": {
+            "status": "-",
+            "course_speed": "196.7\u00b0 / 14.9 kn",
+            "current_draught": "9.9 m",
+            "navigation_status": "-",
+            "position_received": "4 days ago",
+            "latitude": "-",
+            "longitude": "-",
+            "last_port": "-",
+            "atd": "-"
+        },
+        "eta": {
+            "destination": "-",
+            "eta": "-"
+        }
+    }
+}
