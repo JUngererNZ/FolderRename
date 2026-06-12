@@ -1,9 +1,10 @@
-#! 12.06.26 C:\Users\Jason\AppData\Local\Programs\Python\Python314\python.exe
+#! C:\Users\Jason\AppData\Local\Programs\Python\Python314\python.exe
 import os
 import shutil
 import re
 import sys
 import json
+import subprocess  # <-- NEW: to call the diff script
 from datetime import datetime
 from copy import copy
 from pathlib import Path
@@ -11,10 +12,9 @@ from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
 # =========================
-# Shared Configuration {1dde9cfe-a8d4-4b80-8363-425086b50943}
+# Shared Configuration
 # =========================
 BASE_DIR = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\TRACKING\JUNE 2026"
-# BASE_DIR = r"C:\Users\Jason\Projects\TRACKING"
 TODAY_STR = datetime.today().strftime("%d-%m-%Y")
 HEADER_PATTERN = re.compile(r"^COMMENTS \d{2}-\d{2}-\d{4}$")
 
@@ -34,6 +34,7 @@ def load_config(config_file="tracking_workflow_config.json"):
         return json.load(f)
 
 def duplicate_comments_column(file_path: Path, sheet_name: str, header_row: int) -> bool:
+    # ... (unchanged, same as your original) ...
     try:
         wb = load_workbook(file_path)
         if sheet_name not in wb.sheetnames:
@@ -108,16 +109,23 @@ def main():
     latest_folder = sorted(folders)[-1][1]
     target_path = os.path.join(BASE_DIR, TODAY_STR)
     
-    if not os.path.exists(target_path): shutil.copytree(latest_folder, target_path)
+    if not os.path.exists(target_path): 
+        shutil.copytree(latest_folder, target_path)
+        print(f"  Copied from {latest_folder} to {target_path}")
+    else:
+        print(f"  Target folder {target_path} already exists – skipping copy.")
 
     print("\n--- STEP 2: Renaming Files ---")
     for fname in os.listdir(target_path):
         for prefix, new_name in PREFIXES.items():
             if fname.startswith(prefix):
-                os.rename(os.path.join(target_path, fname), os.path.join(target_path, new_name))
+                old_path = os.path.join(target_path, fname)
+                new_path = os.path.join(target_path, new_name)
+                os.rename(old_path, new_path)
+                print(f"  Renamed: {fname} -> {new_name}")
                 break
 
-    print("\n--- STEP 3: Excel Operations ---")
+    print("\n--- STEP 3: Excel Operations (duplicate COMMENTS columns) ---")
     found_files = {op_key: Path(target_path) / fname for fname in os.listdir(target_path) 
                    for op_key, op_data in excel_ops.items() if op_data["search_key"].upper() in fname.upper()}
 
@@ -125,6 +133,35 @@ def main():
         print(f"Updating {op_key}...")
         if found_files.get(op_key):
             duplicate_comments_column(found_files[op_key], op_data["sheet_name"], op_data["header_row"])
+
+    # ========== NEW: Call vessel_tracker_diff.py ==========
+    print("\n--- STEP 4: Running Vessel Change Detection ---")
+    # Determine the directory where this script lives (to find vessel_tracker_diff.py)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    diff_script = os.path.join(script_dir, "vessel_tracker_diff.py")
+
+    if not os.path.exists(diff_script):
+        print(f"[WARNING] Could not find {diff_script}. Skipping vessel diff step.")
+    else:
+        try:
+            # Run the diff script using the same Python interpreter
+            result = subprocess.run(
+                [sys.executable, diff_script],
+                capture_output=False,  # Let output print directly to console
+                check=False            # Don't raise exception on non-zero exit
+            )
+            if result.returncode == 0:
+                print("--- Vessel diff completed successfully. ---")
+            else:
+                print(f"--- Vessel diff finished with exit code {result.returncode}. ---")
+        except Exception as e:
+            print(f"[ERROR] Failed to execute vessel_tracker_diff.py: {e}")
+
+    # ========== PLACEHOLDER FOR NEXT STEP ==========
+    print("\n--- NEXT STEP (placeholder) ---")
+    print("You can add additional actions here, e.g., sending emails, archiving logs, etc.")
+    # Example: call another script or run a notification
+    # subprocess.run([sys.executable, "next_step.py"])
 
 if __name__ == "__main__":
     main()
