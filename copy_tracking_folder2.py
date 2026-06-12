@@ -1,4 +1,4 @@
-#! C:\Users\Jason\AppData\Local\Programs\Python\Python314\python.exe
+#! 12.06.26 C:\Users\Jason\AppData\Local\Programs\Python\Python314\python.exe
 import os
 import shutil
 import re
