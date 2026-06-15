@@ -11,7 +11,7 @@
         },
         "position": {
             "status": "-",
-            "course_speed": "51.3\u00b0 / 18.3 kn",
+            "course_speed": "51.3° / 18.3 kn",
             "current_draught": "7.4 m",
             "navigation_status": "-",
             "position_received": "4 days ago",
@@ -37,7 +37,7 @@
         },
         "position": {
             "status": "Moored",
-            "course_speed": "328.7\u00b0 / 0.0 kn",
+            "course_speed": "328.7° / 0.0 kn",
             "current_draught": "8.8 m",
             "navigation_status": "Moored",
             "position_received": "2 min ago",
@@ -63,7 +63,7 @@
         },
         "position": {
             "status": "-",
-            "course_speed": "180.3\u00b0 / 15.3 kn",
+            "course_speed": "180.3° / 15.3 kn",
             "current_draught": "10.0 m",
             "navigation_status": "-",
             "position_received": "2 days ago",
@@ -89,7 +89,7 @@
         },
         "position": {
             "status": "-",
-            "course_speed": "196.7\u00b0 / 14.9 kn",
+            "course_speed": "196.7° / 14.9 kn",
             "current_draught": "9.9 m",
             "navigation_status": "-",
             "position_received": "4 days ago",
