@@ -5,7 +5,7 @@ import shutil
 import pandas as pd
 from datetime import datetime
 
-# --- CONFIGURATION ---
+# --- CONFIGURATION 18062026---
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Live shared Excel workbook path for Quote Register
