@@ -37,8 +37,7 @@ def load_and_clean_forecast_data(file_path):
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
     
-    # Identify headers from row index 0 (Excel Row 1) since Forecast structures typically start at the top row
-    # If your headers are on row 2, change df_raw.iloc[0] to df_raw.iloc[1] and update the loop range below.
+    # Identify headers from row index 0 (Excel Row 1)
     headers = [str(x).strip() if pd.notna(x) else f"Unnamed: {i}" for i, x in enumerate(df_raw.iloc[0])]
     
     records = {}
@@ -53,7 +52,7 @@ def load_and_clean_forecast_data(file_path):
         if not ba_cell or ba_cell == "nan":
             continue
             
-        # Detect Section Headers if any exist (where the rest of the row is empty and it doesn't start with BA)
+        # Detect Section Headers if any exist
         is_empty_rest = all(pd.isna(cell) or str(cell).strip() == "" for cell in row_cells[1:4])
         if is_empty_rest and not ba_cell.upper().startswith("BA"):
             current_section = ba_cell
@@ -174,7 +173,7 @@ def main():
     print("==========================================================================\n")
 
     # Automatically save and advance the tracking baseline profile
-    with open(SNAPSHOT_PATH, \"w\", encoding=\"utf-8\") as f:
+    with open(SNAPSHOT_PATH, "w", encoding="utf-8") as f:
         json.dump(current_state, f, indent=4)
     print("Local snapshot json base advanced to latest state.")
     
