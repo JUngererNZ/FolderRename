@@ -12,8 +12,8 @@ from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
 # =========================
-# Shared Configuration 18062026 1123 changes
-# =========================
+# Shared Configuration added new STEP 6 
+#  =========================
 BASE_DIR = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\TRACKING\JUNE 2026"
 TODAY_STR = datetime.today().strftime("%d-%m-%Y")
 HEADER_PATTERN = re.compile(r"^COMMENTS \d{2}-\d{2}-\d{4}$")
@@ -154,7 +154,7 @@ def main():
         except Exception as e:
             print(f"[ERROR] Failed to execute vessel_tracker_diff.py: {e}")
 
-    # ========== NEW STEP 5: Running Quote Register Change Detection ==========
+    # ========== STEP 5: Running Quote Register Change Detection ==========
     print("\n--- STEP 5: Running Quote Register Change Detection ---")
     quote_script = os.path.join(script_dir, "quote_register_diff.py")
 
@@ -163,7 +163,6 @@ def main():
         sys.exit(1)
     
     try:
-        # Executes the new quote script and forwards the report directly onto the screen
         quote_result = subprocess.run(
             [sys.executable, quote_script],
             capture_output=False,
@@ -178,6 +177,32 @@ def main():
             
     except Exception as e:
         print(f"[FATAL] System execution crash while launching quote_register_diff.py: {e}")
+        sys.exit(1)
+
+    # ========== NEW STEP 6: Running Forecast Tracker Change Detection ==========
+    print("\n--- STEP 6: Running Forecast Tracker Change Detection ---")
+    forecast_script = os.path.join(script_dir, "forecast_tracker_diff.py")
+
+    if not os.path.exists(forecast_script):
+        print(f"[FATAL] Could not find dependent script: {forecast_script}")
+        sys.exit(1)
+    
+    try:
+        # Executes the new forecast tracker script and forwards reports straight to terminal
+        forecast_result = subprocess.run(
+            [sys.executable, forecast_script],
+            capture_output=False,
+            check=False
+        )
+        
+        if forecast_result.returncode == 0:
+            print("--- Forecast Tracker diff completed successfully. ---")
+        else:
+            print(f"[FATAL] Forecast Tracker diff failed with exit code: {forecast_result.returncode}")
+            sys.exit(1)
+            
+    except Exception as e:
+        print(f"[FATAL] System execution crash while launching forecast_tracker_diff.py: {e}")
         sys.exit(1)
 
     print("\n=======================================================")
