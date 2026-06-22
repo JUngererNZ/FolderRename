@@ -7,7 +7,7 @@
         "VESESL": "VIKING CARINA V. 004",
         "TRANSHIPMENT VESSEL": "",
         "ETA DURBAN": "20-06-2026",
-        "COMMENTS": "CARGO DUES TO BE DONE & LANDING ORDER",
+        "COMMENTS": "ALL DONE",
         "HOLD / DELIVER": "ON HOLD",
         "VESSEL AGENT": "DIAMOND SHIPPING",
         "TRANSPORTER": "NYARAI",
@@ -15,8 +15,8 @@
         "ANF": "15-06-2026",
         "RELEASE INVOICE": "15-06-2026",
         "WE / RIT / XE / ELG ENTRY": "19-06-2026",
-        "CARGO DUES": "",
-        "LANDING ORDER / NAVIS": "",
+        "CARGO DUES": "19-06-2026",
+        "LANDING ORDER / NAVIS": "19-06-2026",
         "_location": {
             "row_num": 4,
             "section": "JUNE 2026"
@@ -30,7 +30,7 @@
         "VESESL": "",
         "TRANSHIPMENT VESSEL": "",
         "ETA DURBAN": "20-06-2026",
-        "COMMENTS": "CARGO DUES TO BE DONE & LANDING ORDER",
+        "COMMENTS": "ALL DONE",
         "HOLD / DELIVER": "ON HOLD",
         "VESSEL AGENT": "DIAMOND SHIPPING",
         "TRANSPORTER": "NYARAI",
@@ -38,8 +38,8 @@
         "ANF": "15-06-2026",
         "RELEASE INVOICE": "15-06-2026",
         "WE / RIT / XE / ELG ENTRY": "19-06-2026",
-        "CARGO DUES": "",
-        "LANDING ORDER / NAVIS": "",
+        "CARGO DUES": "19-06-2026",
+        "LANDING ORDER / NAVIS": "19-06-2026",
         "_location": {
             "row_num": 5,
             "section": "JUNE 2026"
@@ -53,7 +53,7 @@
         "VESESL": "",
         "TRANSHIPMENT VESSEL": "",
         "ETA DURBAN": "20-06-2026",
-        "COMMENTS": "CARGO DUES TO BE DONE & LANDING ORDER",
+        "COMMENTS": "ALL DONE",
         "HOLD / DELIVER": "ON HOLD",
         "VESSEL AGENT": "DIAMOND SHIPPING",
         "TRANSPORTER": "NYARAI",
@@ -61,8 +61,8 @@
         "ANF": "15-06-2026",
         "RELEASE INVOICE": "15-06-2026",
         "WE / RIT / XE / ELG ENTRY": "19-06-2026",
-        "CARGO DUES": "",
-        "LANDING ORDER / NAVIS": "",
+        "CARGO DUES": "19-06-2026",
+        "LANDING ORDER / NAVIS": "19-06-2026",
         "_location": {
             "row_num": 6,
             "section": "JUNE 2026"
@@ -75,8 +75,8 @@
         "BILL NUMBER /                   CONTAINER #": "HOEG1860ANDU1002",
         "VESESL": "HOEGH TRACER V. 60",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "23-06-2026",
-        "COMMENTS": "SWB - RECEIVED",
+        "ETA DURBAN": "24-06-2026",
+        "COMMENTS": "ALL DONE",
         "HOLD / DELIVER": "DELIVER TO ERG / FRONTIER",
         "VESSEL AGENT": "HOEGH",
         "TRANSPORTER": "NATRANS",
@@ -85,7 +85,7 @@
         "RELEASE INVOICE": "14-06-2026",
         "WE / RIT / XE / ELG ENTRY": "18-06-2026",
         "CARGO DUES": "18-06-2026",
-        "LANDING ORDER / NAVIS": "",
+        "LANDING ORDER / NAVIS": "19-06-2026",
         "_location": {
             "row_num": 7,
             "section": "JUNE 2026"
@@ -98,8 +98,8 @@
         "BILL NUMBER /                   CONTAINER #": "HOEG1860SODU0007",
         "VESESL": "HOEGH TRACER V. 60",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "23-06-2026",
-        "COMMENTS": "CARGO DUES TO BE DONE & LANDING ORDER",
+        "ETA DURBAN": "24-06-2026",
+        "COMMENTS": "ALL DONE",
         "HOLD / DELIVER": "ON HOLD",
         "VESSEL AGENT": "HOEGH",
         "TRANSPORTER": "NYARAI",
@@ -107,8 +107,8 @@
         "ANF": "15-06-2026",
         "RELEASE INVOICE": "15-06-2026",
         "WE / RIT / XE / ELG ENTRY": "18-06-2026",
-        "CARGO DUES": "",
-        "LANDING ORDER / NAVIS": "",
+        "CARGO DUES": "19-06-2026",
+        "LANDING ORDER / NAVIS": "19-06-2026",
         "_location": {
             "row_num": 8,
             "section": "JUNE 2026"
@@ -121,8 +121,8 @@
         "BILL NUMBER /                   CONTAINER #": "HOEG1860SODU0008",
         "VESESL": "HOEGH TRACER V. 60",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "23-06-2026",
-        "COMMENTS": "CARGO DUES TO BE DONE & LANDING ORDER",
+        "ETA DURBAN": "24-06-2026",
+        "COMMENTS": "ALL DONE",
         "HOLD / DELIVER": "ON HOLD",
         "VESSEL AGENT": "HOEGH",
         "TRANSPORTER": "NYARAI",
@@ -130,8 +130,8 @@
         "ANF": "15-06-2026",
         "RELEASE INVOICE": "15-06-2026",
         "WE / RIT / XE / ELG ENTRY": "18-06-2026",
-        "CARGO DUES": "",
-        "LANDING ORDER / NAVIS": "",
+        "CARGO DUES": "19-06-2026",
+        "LANDING ORDER / NAVIS": "22-06-2026",
         "_location": {
             "row_num": 9,
             "section": "JUNE 2026"
@@ -144,14 +144,14 @@
         "BILL NUMBER /                   CONTAINER #": "EUKOCNZA2091842W",
         "VESESL": "MORNING CELLO V. IF605",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "25-06-2026",
-        "COMMENTS": "ALL TO BE DONE",
+        "ETA DURBAN": "24-06-2026",
+        "COMMENTS": "AWAITING RIT ENRTRY, CARGO DUES AND LADNING ORDER",
         "HOLD / DELIVER": "DELIVER TO SURYA MINES, LUBUMBASHI",
         "VESSEL AGENT": "DIAMOND SHIPPING",
-        "TRANSPORTER": "",
-        "TPT              / X-HAUL": "",
-        "ANF": "",
-        "RELEASE INVOICE": "",
+        "TRANSPORTER": "VANITO",
+        "TPT              / X-HAUL": "19-06-2026",
+        "ANF": "19-06-2026",
+        "RELEASE INVOICE": "19-06-2026",
         "WE / RIT / XE / ELG ENTRY": "",
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
@@ -167,14 +167,14 @@
         "BILL NUMBER /                   CONTAINER #": "EUKOCNZA2091841W",
         "VESESL": "MORNING CELLO V. IF605",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "25-06-2026",
-        "COMMENTS": "ALL TO BE DONE",
+        "ETA DURBAN": "24-06-2026",
+        "COMMENTS": "AWAITING RIT ENRTRY, CARGO DUES AND LADNING ORDER",
         "HOLD / DELIVER": "DELIVER TO SURYA MINES, LUBUMBASHI",
         "VESSEL AGENT": "DIAMOND SHIPPING",
-        "TRANSPORTER": "",
-        "TPT              / X-HAUL": "",
-        "ANF": "",
-        "RELEASE INVOICE": "",
+        "TRANSPORTER": "VANITO",
+        "TPT              / X-HAUL": "19-06-2026",
+        "ANF": "19-06-2026",
+        "RELEASE INVOICE": "19-06-2026",
         "WE / RIT / XE / ELG ENTRY": "",
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
@@ -190,43 +190,20 @@
         "BILL NUMBER /                   CONTAINER #": "EUKOCNZA2091829W",
         "VESESL": "MORNING CELLO V. IF605",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "25-06-2026",
-        "COMMENTS": "ALL TO BE DONE",
+        "ETA DURBAN": "24-06-2026",
+        "COMMENTS": "AWAITING WE ENRTRY, CARGO DUES AND LADNING ORDER",
         "HOLD / DELIVER": "ON HOLD",
         "VESSEL AGENT": "DIAMOND SHIPPING",
         "TRANSPORTER": "NYARAI",
         "TPT              / X-HAUL": "17-06-2026",
-        "ANF": "",
-        "RELEASE INVOICE": "",
+        "ANF": "19-06-2026",
+        "RELEASE INVOICE": "19-06-2026",
         "WE / RIT / XE / ELG ENTRY": "",
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
             "row_num": 12,
             "section": "JUNE 2026"
-        }
-    },
-    "BA3128": {
-        "BA NUMBER": "BA3128",
-        "FILE REF": "",
-        "UNIT": "CAT745-04A",
-        "BILL NUMBER /                   CONTAINER #": "",
-        "VESESL": "",
-        "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "10-07-2026",
-        "COMMENTS": "IN PRODUCTION",
-        "HOLD / DELIVER": "ON HOLD",
-        "VESSEL AGENT": "",
-        "TRANSPORTER": "",
-        "TPT              / X-HAUL": "",
-        "ANF": "",
-        "RELEASE INVOICE": "",
-        "WE / RIT / XE / ELG ENTRY": "",
-        "CARGO DUES": "",
-        "LANDING ORDER / NAVIS": "",
-        "_location": {
-            "row_num": 15,
-            "section": "JULY 2026 - PENDING"
         }
     },
     "BA3215": {
@@ -248,7 +225,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 16,
+            "row_num": 14,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -271,7 +248,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 17,
+            "row_num": 15,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -294,7 +271,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 18,
+            "row_num": 16,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -317,30 +294,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 19,
-            "section": "JULY 2026 - PENDING"
-        }
-    },
-    "BA3131": {
-        "BA NUMBER": "BA3131",
-        "FILE REF": "",
-        "UNIT": "CAT745-04A",
-        "BILL NUMBER /                   CONTAINER #": "",
-        "VESESL": "",
-        "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "15-07-2026",
-        "COMMENTS": "IN PRODUCTION",
-        "HOLD / DELIVER": "ON HOLD",
-        "VESSEL AGENT": "",
-        "TRANSPORTER": "",
-        "TPT              / X-HAUL": "",
-        "ANF": "",
-        "RELEASE INVOICE": "",
-        "WE / RIT / XE / ELG ENTRY": "",
-        "CARGO DUES": "",
-        "LANDING ORDER / NAVIS": "",
-        "_location": {
-            "row_num": 20,
+            "row_num": 17,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -363,7 +317,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 21,
+            "row_num": 18,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -386,7 +340,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 22,
+            "row_num": 19,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -409,7 +363,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 23,
+            "row_num": 20,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -432,7 +386,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 24,
+            "row_num": 21,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -455,7 +409,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 25,
+            "row_num": 22,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -478,7 +432,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 26,
+            "row_num": 23,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -501,7 +455,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 27,
+            "row_num": 24,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -524,7 +478,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 28,
+            "row_num": 25,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -547,7 +501,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 29,
+            "row_num": 26,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -570,7 +524,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 30,
+            "row_num": 27,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -593,7 +547,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 31,
+            "row_num": 28,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -616,7 +570,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 32,
+            "row_num": 29,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -639,7 +593,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 33,
+            "row_num": 30,
             "section": "JULY 2026 - PENDING"
         }
     },
@@ -662,7 +616,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 35,
+            "row_num": 32,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -685,7 +639,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 36,
+            "row_num": 33,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -708,7 +662,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 37,
+            "row_num": 34,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -731,7 +685,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 38,
+            "row_num": 35,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -754,7 +708,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 39,
+            "row_num": 36,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -777,7 +731,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 40,
+            "row_num": 37,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -800,7 +754,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 41,
+            "row_num": 38,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -823,7 +777,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 42,
+            "row_num": 39,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -834,7 +788,7 @@
         "BILL NUMBER /                   CONTAINER #": "",
         "VESESL": "",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "09-08-2026",
+        "ETA DURBAN": "12-08-2026",
         "COMMENTS": "IN PRODUCTION",
         "HOLD / DELIVER": "DELIVER TO ERG / FRONTIER",
         "VESSEL AGENT": "",
@@ -846,7 +800,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 43,
+            "row_num": 40,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -869,7 +823,30 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 44,
+            "row_num": 41,
+            "section": "AUGUST 2026 - PENDING"
+        }
+    },
+    "BA3231": {
+        "BA NUMBER": "BA3231",
+        "FILE REF": "",
+        "UNIT": "CAT14-15B",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "12-08-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "ON HOLD",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 42,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -892,7 +869,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 45,
+            "row_num": 43,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -915,7 +892,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 46,
+            "row_num": 44,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -938,7 +915,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 47,
+            "row_num": 45,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -961,7 +938,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 48,
+            "row_num": 46,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -984,7 +961,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 49,
+            "row_num": 47,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -1007,7 +984,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 50,
+            "row_num": 48,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -1030,7 +1007,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 51,
+            "row_num": 49,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -1053,7 +1030,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 52,
+            "row_num": 50,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -1076,7 +1053,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 53,
+            "row_num": 51,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -1099,7 +1076,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 54,
+            "row_num": 52,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -1122,7 +1099,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 55,
+            "row_num": 53,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -1145,7 +1122,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 56,
+            "row_num": 54,
             "section": "AUGUST 2026 - PENDING"
         }
     },
@@ -1168,7 +1145,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 58,
+            "row_num": 56,
             "section": "SEPTEMBER 2026 - PENDING"
         }
     },
@@ -1191,53 +1168,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 59,
-            "section": "SEPTEMBER 2026 - PENDING"
-        }
-    },
-    "BA3196": {
-        "BA NUMBER": "BA3196",
-        "FILE REF": "",
-        "UNIT": "CAT D10-07A",
-        "BILL NUMBER /                   CONTAINER #": "",
-        "VESESL": "",
-        "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "15-09-2026",
-        "COMMENTS": "IN PRODUCTION / AWAITING ARTS DATE",
-        "HOLD / DELIVER": "DELIVER TO ERG / FRONTIER",
-        "VESSEL AGENT": "",
-        "TRANSPORTER": "",
-        "TPT              / X-HAUL": "",
-        "ANF": "",
-        "RELEASE INVOICE": "",
-        "WE / RIT / XE / ELG ENTRY": "",
-        "CARGO DUES": "",
-        "LANDING ORDER / NAVIS": "",
-        "_location": {
-            "row_num": 60,
-            "section": "SEPTEMBER 2026 - PENDING"
-        }
-    },
-    "BA3197": {
-        "BA NUMBER": "BA3197",
-        "FILE REF": "",
-        "UNIT": "CAT D10-07A",
-        "BILL NUMBER /                   CONTAINER #": "",
-        "VESESL": "",
-        "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "15-09-2026",
-        "COMMENTS": "IN PRODUCTION / AWAITING ARTS DATE",
-        "HOLD / DELIVER": "DELIVER TO ERG / FRONTIER",
-        "VESSEL AGENT": "",
-        "TRANSPORTER": "",
-        "TPT              / X-HAUL": "",
-        "ANF": "",
-        "RELEASE INVOICE": "",
-        "WE / RIT / XE / ELG ENTRY": "",
-        "CARGO DUES": "",
-        "LANDING ORDER / NAVIS": "",
-        "_location": {
-            "row_num": 61,
+            "row_num": 57,
             "section": "SEPTEMBER 2026 - PENDING"
         }
     },
@@ -1260,7 +1191,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 62,
+            "row_num": 58,
             "section": "SEPTEMBER 2026 - PENDING"
         }
     },
@@ -1283,7 +1214,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 63,
+            "row_num": 59,
             "section": "SEPTEMBER 2026 - PENDING"
         }
     },
@@ -1306,7 +1237,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 64,
+            "row_num": 60,
             "section": "SEPTEMBER 2026 - PENDING"
         }
     },
@@ -1329,20 +1260,112 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 65,
+            "row_num": 61,
             "section": "SEPTEMBER 2026 - PENDING"
         }
     },
-    "BA3184": {
-        "BA NUMBER": "BA3184",
+    "BA3230": {
+        "BA NUMBER": "BA3230",
         "FILE REF": "",
-        "UNIT": "CAT745-04A",
+        "UNIT": "CAT D6GC-01A",
         "BILL NUMBER /                   CONTAINER #": "",
         "VESESL": "",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "19-10-2026",
+        "ETA DURBAN": "08-10-2026",
         "COMMENTS": "IN PRODUCTION",
         "HOLD / DELIVER": "ON HOLD",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 63,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3253": {
+        "BA NUMBER": "BA3253",
+        "FILE REF": "",
+        "UNIT": "CAT DE220E0 GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "11-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 64,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3254": {
+        "BA NUMBER": "BA3254",
+        "FILE REF": "",
+        "UNIT": "CAT DE220E0 GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "11-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 65,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3255": {
+        "BA NUMBER": "BA3255",
+        "FILE REF": "",
+        "UNIT": "CAT DE275E0 GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "11-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 66,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3256": {
+        "BA NUMBER": "BA3256",
+        "FILE REF": "",
+        "UNIT": "CAT DE330E0 GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "11-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
         "VESSEL AGENT": "",
         "TRANSPORTER": "",
         "TPT              / X-HAUL": "",
@@ -1356,16 +1379,16 @@
             "section": "OCTOBER 2026 - PENDING"
         }
     },
-    "BA3183": {
-        "BA NUMBER": "BA3183",
+    "BA3257": {
+        "BA NUMBER": "BA3257",
         "FILE REF": "",
-        "UNIT": "CAT D6GC-01A",
+        "UNIT": "CAT DE330E0 GENSET",
         "BILL NUMBER /                   CONTAINER #": "",
         "VESESL": "",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "24-10-2026",
+        "ETA DURBAN": "11-10-2026",
         "COMMENTS": "IN PRODUCTION",
-        "HOLD / DELIVER": "DELIVER TO SURYA MINES, LUBUMBASHI",
+        "HOLD / DELIVER": "DELIVER TO CE",
         "VESSEL AGENT": "",
         "TRANSPORTER": "",
         "TPT              / X-HAUL": "",
@@ -1379,14 +1402,83 @@
             "section": "OCTOBER 2026 - PENDING"
         }
     },
-    "BA3209": {
-        "BA NUMBER": "BA3209",
+    "BA3258": {
+        "BA NUMBER": "BA3258",
         "FILE REF": "",
-        "UNIT": "CAT745-04A",
+        "UNIT": "CAT DE450GC GENSET",
         "BILL NUMBER /                   CONTAINER #": "",
         "VESESL": "",
         "TRANSHIPMENT VESSEL": "",
-        "ETA DURBAN": "19-11-2026",
+        "ETA DURBAN": "11-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 69,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3259": {
+        "BA NUMBER": "BA3259",
+        "FILE REF": "",
+        "UNIT": "CAT DE450GC GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "11-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 70,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3260": {
+        "BA NUMBER": "BA3260",
+        "FILE REF": "",
+        "UNIT": "CAT DE660E0 GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "11-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 71,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3229": {
+        "BA NUMBER": "BA3229",
+        "FILE REF": "",
+        "UNIT": "CAT D6GC-01A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "12-10-2026",
         "COMMENTS": "IN PRODUCTION",
         "HOLD / DELIVER": "ON HOLD",
         "VESSEL AGENT": "",
@@ -1398,7 +1490,421 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 70,
+            "row_num": 72,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3184": {
+        "BA NUMBER": "BA3184",
+        "FILE REF": "",
+        "UNIT": "CAT745-04A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "25-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "ON HOLD",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 73,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3261": {
+        "BA NUMBER": "BA3261",
+        "FILE REF": "",
+        "UNIT": "CAT DE715GC GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "25-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 74,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3262": {
+        "BA NUMBER": "BA3262",
+        "FILE REF": "",
+        "UNIT": "CAT DE715GC GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "25-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 75,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3263": {
+        "BA NUMBER": "BA3263",
+        "FILE REF": "",
+        "UNIT": "CAT DE850E0 GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "25-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 76,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3264": {
+        "BA NUMBER": "BA3264",
+        "FILE REF": "",
+        "UNIT": "CAT DE850E0 GENSET",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "25-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO CE",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 77,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3183": {
+        "BA NUMBER": "BA3183",
+        "FILE REF": "",
+        "UNIT": "CAT D6GC-01A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "27-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO SURYA MINES, LUBUMBASHI",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 78,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3236": {
+        "BA NUMBER": "BA3236",
+        "FILE REF": "",
+        "UNIT": "UNATRAC  - 3516B",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "27-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO MUTANDA",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 79,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3237": {
+        "BA NUMBER": "BA3237",
+        "FILE REF": "",
+        "UNIT": "UNATRAC  - 3516B",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "27-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO MUTANDA",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 80,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3238": {
+        "BA NUMBER": "BA3238",
+        "FILE REF": "",
+        "UNIT": "UNATRAC  - 3516B",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "27-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO MUTANDA",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 81,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3239": {
+        "BA NUMBER": "BA3239",
+        "FILE REF": "",
+        "UNIT": "UNATRAC  - 3516B",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "27-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO MUTANDA",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 82,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3240": {
+        "BA NUMBER": "BA3240",
+        "FILE REF": "",
+        "UNIT": "UNATRAC  - 3516B",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "27-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO MUTANDA",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 83,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3241": {
+        "BA NUMBER": "BA3241",
+        "FILE REF": "",
+        "UNIT": "UNATRAC  - 3516B",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "27-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO MUTANDA",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 84,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3242": {
+        "BA NUMBER": "BA3242",
+        "FILE REF": "",
+        "UNIT": "UNATRAC  - 3516B",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "27-10-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "DELIVER TO MUTANDA",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 85,
+            "section": "OCTOBER 2026 - PENDING"
+        }
+    },
+    "BA3196": {
+        "BA NUMBER": "BA3196",
+        "FILE REF": "",
+        "UNIT": "CAT D10-07A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "04-11-2026",
+        "COMMENTS": "IN PRODUCTION / AWAITING ARTS DATE",
+        "HOLD / DELIVER": "DELIVER TO ERG / FRONTIER",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 87,
+            "section": "NOVEMBER 2026 - PENDING"
+        }
+    },
+    "BA3197": {
+        "BA NUMBER": "BA3197",
+        "FILE REF": "",
+        "UNIT": "CAT D10-07A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "04-11-2026",
+        "COMMENTS": "IN PRODUCTION / AWAITING ARTS DATE",
+        "HOLD / DELIVER": "DELIVER TO ERG / FRONTIER",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 88,
+            "section": "NOVEMBER 2026 - PENDING"
+        }
+    },
+    "BA3273": {
+        "BA NUMBER": "BA3273",
+        "FILE REF": "",
+        "UNIT": "CAT D6GC-01A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "12-11-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "ON HOLD",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 89,
+            "section": "NOVEMBER 2026 - PENDING"
+        }
+    },
+    "BA3274": {
+        "BA NUMBER": "BA3274",
+        "FILE REF": "",
+        "UNIT": "CAT D6GC-01A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "12-11-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "ON HOLD",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 90,
+            "section": "NOVEMBER 2026 - PENDING"
+        }
+    },
+    "BA3209": {
+        "BA NUMBER": "BA3209",
+        "FILE REF": "",
+        "UNIT": "CAT745-04A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "15-11-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "ON HOLD",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 91,
             "section": "NOVEMBER 2026 - PENDING"
         }
     },
@@ -1421,7 +1927,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 71,
+            "row_num": 92,
             "section": "NOVEMBER 2026 - PENDING"
         }
     },
@@ -1444,7 +1950,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 72,
+            "row_num": 93,
             "section": "NOVEMBER 2026 - PENDING"
         }
     },
@@ -1467,7 +1973,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 73,
+            "row_num": 94,
             "section": "NOVEMBER 2026 - PENDING"
         }
     },
@@ -1490,7 +1996,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 76,
+            "row_num": 97,
             "section": "UNITS REMOVED FROM THE FORECAST BY BARTRAC"
         }
     },
@@ -1513,7 +2019,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 77,
+            "row_num": 98,
             "section": "UNITS REMOVED FROM THE FORECAST BY BARTRAC"
         }
     },
@@ -1536,7 +2042,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 78,
+            "row_num": 99,
             "section": "UNITS REMOVED FROM THE FORECAST BY BARTRAC"
         }
     },
@@ -1559,7 +2065,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 79,
+            "row_num": 100,
             "section": "UNITS REMOVED FROM THE FORECAST BY BARTRAC"
         }
     },
@@ -1582,7 +2088,7 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 80,
+            "row_num": 101,
             "section": "UNITS REMOVED FROM THE FORECAST BY BARTRAC"
         }
     },
@@ -1605,7 +2111,53 @@
         "CARGO DUES": "",
         "LANDING ORDER / NAVIS": "",
         "_location": {
-            "row_num": 81,
+            "row_num": 102,
+            "section": "UNITS REMOVED FROM THE FORECAST BY BARTRAC"
+        }
+    },
+    "BA3128": {
+        "BA NUMBER": "BA3128",
+        "FILE REF": "",
+        "UNIT": "CAT745-04A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "10-07-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "ON HOLD",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 103,
+            "section": "UNITS REMOVED FROM THE FORECAST BY BARTRAC"
+        }
+    },
+    "BA3131": {
+        "BA NUMBER": "BA3131",
+        "FILE REF": "",
+        "UNIT": "CAT745-04A",
+        "BILL NUMBER /                   CONTAINER #": "",
+        "VESESL": "",
+        "TRANSHIPMENT VESSEL": "",
+        "ETA DURBAN": "15-07-2026",
+        "COMMENTS": "IN PRODUCTION",
+        "HOLD / DELIVER": "ON HOLD",
+        "VESSEL AGENT": "",
+        "TRANSPORTER": "",
+        "TPT              / X-HAUL": "",
+        "ANF": "",
+        "RELEASE INVOICE": "",
+        "WE / RIT / XE / ELG ENTRY": "",
+        "CARGO DUES": "",
+        "LANDING ORDER / NAVIS": "",
+        "_location": {
+            "row_num": 104,
             "section": "UNITS REMOVED FROM THE FORECAST BY BARTRAC"
         }
     }
