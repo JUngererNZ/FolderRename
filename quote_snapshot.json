@@ -9072,5 +9072,44 @@
             "row_num": 1577,
             "section": "General"
         }
+    },
+    "19/06/2026": {
+        "Unnamed: 0": "19/06/2026",
+        "Unnamed: 1": "2026010600645",
+        "Unnamed: 2": "1 X CAT 14GC-01 DURBAN TO LUBUMBASHI",
+        "Unnamed: 3": "BARTRAC",
+        "Unnamed: 4": "VANITO",
+        "Unnamed: 5": "ROAD",
+        "Unnamed: 6": "ZAR355K",
+        "_location": {
+            "row_num": 1578,
+            "section": "General"
+        }
+    },
+    "22/06/2026": {
+        "Unnamed: 0": "22/06/2026",
+        "Unnamed: 1": "2026010600647",
+        "Unnamed: 2": "1 X E10 DELIVERY CRANE - CFR DURBAN TO CPT KAMOA",
+        "Unnamed: 3": "BARTRAC",
+        "Unnamed: 4": "",
+        "Unnamed: 5": "ROAD",
+        "Unnamed: 6": "",
+        "_location": {
+            "row_num": 1580,
+            "section": "General"
+        }
+    },
+    "18/06/2026": {
+        "Unnamed: 0": "18/06/2026",
+        "Unnamed: 1": "2026010600651",
+        "Unnamed: 2": "1 X CAT 924 WHEEL LOADER DBN TO LUBUMBASHI( ANTWERP TO DURBAN PENDING)",
+        "Unnamed: 3": "BARTRAC",
+        "Unnamed: 4": "",
+        "Unnamed: 5": "",
+        "Unnamed: 6": "",
+        "_location": {
+            "row_num": 1584,
+            "section": "General"
+        }
     }
 }
