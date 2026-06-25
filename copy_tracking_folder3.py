@@ -155,7 +155,7 @@ def main():
             print(f"[ERROR] Failed to execute vessel_tracker_diff.py: {e}")
 
     # ========== STEP 5: Running Quote Register Change Detection ==========
-    print("\n--- STEP 5: Running Quote Register Change Detection ---")
+    """print("\n--- STEP 5: Running Quote Register Change Detection ---")
     quote_script = os.path.join(script_dir, "quote_register_diff.py")
 
     if not os.path.exists(quote_script):
@@ -177,7 +177,7 @@ def main():
             
     except Exception as e:
         print(f"[FATAL] System execution crash while launching quote_register_diff.py: {e}")
-        sys.exit(1)
+        sys.exit(1)"""
 
     # ========== NEW STEP 6: Running Forecast Tracker Change Detection ==========
     print("\n--- STEP 6: Running Forecast Tracker Change Detection ---")
