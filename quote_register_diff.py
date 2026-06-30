@@ -9,7 +9,7 @@ from datetime import datetime
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Live shared Excel workbook path for Quote Register
-CURRENT_DATA_PATH = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\FML QUOTE REGISTER\QUOTE REGISTER AS OF 19-06-2026.xlsx"
+CURRENT_DATA_PATH = r"C:\Users\Jason\FML Freight Solutions\FML Doc Share - Documents\FML QUOTE REGISTER\QUOTE REGISTER AS OF 24-06-2026.xlsx"
 
 # Local snapshot tracking file adjusted for this script
 SNAPSHOT_PATH = os.path.join(SCRIPT_DIR, "quote_snapshot.json")

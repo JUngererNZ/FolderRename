@@ -9099,6 +9099,32 @@
             "section": "General"
         }
     },
+    "25/06/2026": {
+        "Unnamed: 0": "25/06/2026",
+        "Unnamed: 1": "2026010600648",
+        "Unnamed: 2": "1 X 966 DBN TO KOLWEZI",
+        "Unnamed: 3": "BARTRAC",
+        "Unnamed: 4": "FRIKKIE",
+        "Unnamed: 5": "ROAD",
+        "Unnamed: 6": "",
+        "_location": {
+            "row_num": 1581,
+            "section": "General"
+        }
+    },
+    "26/06/2026": {
+        "Unnamed: 0": "26/06/2026",
+        "Unnamed: 1": "2026010600657",
+        "Unnamed: 2": "1 X 35000LT DIESEL TANK RCB TO LUBUMBASHI",
+        "Unnamed: 3": "",
+        "Unnamed: 4": "",
+        "Unnamed: 5": "",
+        "Unnamed: 6": "",
+        "_location": {
+            "row_num": 1590,
+            "section": "General"
+        }
+    },
     "18/06/2026": {
         "Unnamed: 0": "18/06/2026",
         "Unnamed: 1": "2026010600651",
@@ -9109,6 +9135,19 @@
         "Unnamed: 6": "",
         "_location": {
             "row_num": 1584,
+            "section": "General"
+        }
+    },
+    "24/06/2026": {
+        "Unnamed: 0": "24/06/2026",
+        "Unnamed: 1": "2026010600653",
+        "Unnamed: 2": "various units dbn to kolwezi - chemaf - mail quote",
+        "Unnamed: 3": "BARTRAC",
+        "Unnamed: 4": "NAT",
+        "Unnamed: 5": "ROAD",
+        "Unnamed: 6": "",
+        "_location": {
+            "row_num": 1586,
             "section": "General"
         }
     }
