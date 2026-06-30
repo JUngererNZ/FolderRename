@@ -1,0 +1,169 @@
+' ==============================================================================
+' Module: ModSaveEmailWithGUID
+' Description: Saves all selected Outlook emails as .msg files using
+'              random 12-character GUID-like filenames to a user-chosen folder.
+' Compatibility: Outlook for Microsoft 365 (64-bit)
+' ==============================================================================
+
+Option Explicit
+
+' --- WINDOWS API DECLARATIONS (kept for compatibility, but not used) ---
+Private Type OPENFILENAME
+    lStructSize As Long
+    hwndOwner As LongPtr
+    hInstance As LongPtr
+    lpstrFilter As String
+    lpstrCustomFilter As String
+    nMaxCustFilter As Long
+    nFilterIndex As Long
+    lpstrFile As String
+    nMaxFile As Long
+    lpstrFileTitle As String
+    nMaxFileTitle As Long
+    lpstrInitialDir As String
+    lpstrTitle As String
+    flags As Long
+    nFileOffset As Integer
+    nFileExtension As Integer
+    lpstrDefExt As String
+    lCustData As LongPtr
+    lpfnHook As LongPtr
+    lpTemplateName As String
+    pvReserved As Long
+    dwReserved As Long
+    FlagsEx As Long
+End Type
+
+Private Declare PtrSafe Function GetSaveFileName Lib "comdlg32.dll" Alias "GetSaveFileNameA" (pOpenfilename As OPENFILENAME) As Long
+Private Declare PtrSafe Function FindWindow Lib "user32" Alias "FindWindowA" (ByVal lpClassName As String, ByVal lpWindowName As String) As LongPtr
+
+' --- MAIN MACRO FOR MULTIPLE EMAILS ---
+Sub SaveSelectedEmailsWithGUIDName()
+    On Error GoTo ErrorHandler
+
+    Dim olApp As Outlook.Application
+    Dim olSelection As Outlook.Selection
+    Dim olItem As Object
+    Dim olMail As Outlook.MailItem
+    Dim destFolder As String
+    Dim successCount As Long
+    Dim errorCount As Long
+    Dim errorMsg As String
+
+    Set olApp = Outlook.Application
+    Set olSelection = olApp.ActiveExplorer.Selection
+
+    ' 1. Validate Selection
+    If olSelection.Count = 0 Then
+        MsgBox "Please select at least one email before running this macro.", vbExclamation, "No Selection"
+        Exit Sub
+    End If
+
+    ' 2. Ask user to choose a destination folder (using Shell.Application)
+    destFolder = SelectFolder("Choose the folder where emails will be saved")
+    If destFolder = "" Then
+        MsgBox "No folder selected. Operation cancelled.", vbInformation, "Cancelled"
+        Exit Sub
+    End If
+
+    ' 3. Process each selected item
+    successCount = 0
+    errorCount = 0
+    errorMsg = ""
+
+    For Each olItem In olSelection
+        If TypeOf olItem Is Outlook.MailItem Then
+            Set olMail = olItem
+
+            ' Skip unsaved drafts
+            If olMail.EntryID = "" Then
+                errorCount = errorCount + 1
+                errorMsg = errorMsg & "Skipped unsaved draft: " & olMail.Subject & vbCrLf
+                GoTo NextItem
+            End If
+
+            ' Generate a unique random filename for this email
+            Dim randomFilename As String
+            randomFilename = GenerateRandomHex(12) & ".msg"
+
+            ' Build full path
+            Dim fullPath As String
+            fullPath = destFolder & "\" & randomFilename
+
+            ' Save the email
+            olMail.SaveAs fullPath, olMSG
+            successCount = successCount + 1
+
+        Else
+            errorCount = errorCount + 1
+            errorMsg = errorMsg & "Skipped non-mail item: " & olItem.Subject & vbCrLf
+        End If
+
+NextItem:
+        Set olMail = Nothing
+    Next olItem
+
+    ' 4. Show summary report
+    Dim summary As String
+    summary = "Operation completed." & vbCrLf & _
+              "Successfully saved: " & successCount & " email(s)" & vbCrLf & _
+              "Errors / skipped: " & errorCount & " item(s)"
+    If errorCount > 0 Then
+        summary = summary & vbCrLf & vbCrLf & "Details:" & vbCrLf & errorMsg
+    End If
+    MsgBox summary, vbInformation, "Save Complete"
+
+ExitRoutine:
+    Set olMail = Nothing
+    Set olSelection = Nothing
+    Set olApp = Nothing
+    Exit Sub
+
+ErrorHandler:
+    Dim errNum As Long
+    Dim errDesc As String
+    errNum = Err.Number
+    errDesc = Err.Description
+
+    If errNum = -2147024891 Then '&H80070005
+        MsgBox "Permission denied. You may not have write access to the selected folder.", vbCritical, "Error Saving File"
+    Else
+        MsgBox "An unexpected error occurred:" & vbCrLf & "Error #" & errNum & ": " & errDesc, vbCritical, "Macro Error"
+    End If
+    Resume ExitRoutine
+End Sub
+
+' --- FIXED: Folder Picker using Shell.Application (works in Outlook) ---
+Private Function SelectFolder(ByVal dialogTitle As String) As String
+    Dim objShell As Object
+    Dim objFolder As Object
+    
+    Set objShell = CreateObject("Shell.Application")
+    Set objFolder = objShell.BrowseForFolder(0, dialogTitle, 0, "")
+    
+    If Not objFolder Is Nothing Then
+        SelectFolder = objFolder.Self.Path
+    Else
+        SelectFolder = ""
+    End If
+    
+    Set objFolder = Nothing
+    Set objShell = Nothing
+End Function
+
+' --- RANDOM FILENAME GENERATOR (unchanged) ---
+Private Function GenerateRandomHex(ByVal length As Integer) As String
+    Dim i As Integer
+    Dim hexStr As String
+    Dim randomValue As Integer
+
+    Randomize
+    hexStr = ""
+    For i = 1 To length
+        randomValue = Int(Rnd() * 16)
+        hexStr = hexStr & Hex(randomValue)
+    Next i
+
+    GenerateRandomHex = LCase(hexStr)
+End Function
+

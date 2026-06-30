@@ -1,0 +1,146 @@
+' ==============================================================================
+' Module: ModSaveEmailWithGUID
+' Description: Saves the currently selected Outlook email as an .msg file using
+'              a random 12-character GUID-like filename via Windows API.
+' Compatibility: Outlook for Microsoft 365 (64-bit)
+' ==============================================================================
+
+Option Explicit
+
+' --- WINDOWS API DECLARATIONS FOR 64-BIT OUTLOOK ---
+Private Type OPENFILENAME
+    lStructSize As Long
+    hwndOwner As LongPtr
+    hInstance As LongPtr
+    lpstrFilter As String
+    lpstrCustomFilter As String
+    nMaxCustFilter As Long
+    nFilterIndex As Long
+    lpstrFile As String
+    nMaxFile As Long
+    lpstrFileTitle As String
+    nMaxFileTitle As Long
+    lpstrInitialDir As String
+    lpstrTitle As String
+    flags As Long
+    nFileOffset As Integer
+    nFileExtension As Integer
+    lpstrDefExt As String
+    lCustData As LongPtr
+    lpfnHook As LongPtr
+    lpTemplateName As String
+    pvReserved As Long
+    dwReserved As Long
+    FlagsEx As Long
+End Type
+
+Private Declare PtrSafe Function GetSaveFileName Lib "comdlg32.dll" Alias "GetSaveFileNameA" (pOpenfilename As OPENFILENAME) As Long
+Private Declare PtrSafe Function FindWindow Lib "user32" Alias "FindWindowA" (ByVal lpClassName As String, ByVal lpWindowName As String) As LongPtr
+
+Sub SaveEmailWithGUIDName()
+    On Error GoTo ErrorHandler
+
+    ' --- CONFIGURATION ---
+    Dim DefaultSavePath As String
+    DefaultSavePath = CreateObject("WScript.Shell").SpecialFolders("MyDocuments")
+    ' ---------------------
+
+    Dim olApp As Outlook.Application
+    Dim olSelection As Outlook.Selection
+    Dim olItem As Object
+    Dim olMail As Outlook.MailItem
+    
+    Set olApp = Outlook.Application
+    Set olSelection = olApp.ActiveExplorer.Selection
+
+    ' 1. Validate Selection
+    If olSelection.Count = 0 Then
+        MsgBox "Please select an email before running this macro.", vbExclamation, "No Selection"
+        Exit Sub
+    End If
+
+    If Not TypeOf olSelection.Item(1) Is Outlook.MailItem Then
+        MsgBox "The selected item is not an email message.", vbExclamation, "Invalid Item Type"
+        Exit Sub
+    End If
+
+    Set olMail = olSelection.Item(1)
+
+    ' 2. Handle Edge Case: Unsaved Drafts
+    If olMail.EntryID = "" Then
+        MsgBox "This email is an unsaved draft. Please save or send it first.", vbCritical, "Unsaved Draft"
+        Exit Sub
+    End If
+
+    ' 3. Generate Random 12-Character Filename
+    Dim randomFilename As String
+    randomFilename = GenerateRandomHex(12) & ".msg" ' <-- Changed parameter from 8 to 12
+
+    ' 4. Configure and Call Windows API Save As Dialog
+    Dim OFN As OPENFILENAME
+    Dim chnWindow As LongPtr
+    
+    ' Find Outlook's window handle to modal the dialog properly
+    chnWindow = FindWindow("rctrl_renwnd32", vbNullString)
+    
+    With OFN
+        .lStructSize = Len(OFN)
+        .hwndOwner = chnWindow
+        .lpstrFilter = "Outlook Message Format (*.msg)" & Chr$(0) & "*.msg" & Chr$(0)
+        
+        ' Pre-fill the filename buffer
+        .lpstrFile = randomFilename & String$(256 - Len(randomFilename), 0)
+        .nMaxFile = 256
+        .lpstrFileTitle = String$(256, 0)
+        .nMaxFileTitle = 256
+        
+        .lpstrInitialDir = DefaultSavePath
+        .lpstrTitle = "Save Email As (GUID Filename)"
+        .flags = &H2 Or &H4 ' OFN_OVERWRITEPROMPT or OFN_HIDEREADONLY
+    End With
+
+    ' Open Dialog: returns 1 if user clicked "Save"
+    If GetSaveFileName(OFN) = 1 Then
+        ' Extract the chosen full path (stripping null characters)
+        Dim chosenPath As String
+        chosenPath = Left$(OFN.lpstrFile, InStr(OFN.lpstrFile, Chr$(0)) - 1)
+        
+        ' 5. Execute Save operation
+        olMail.SaveAs chosenPath, olMSG
+        MsgBox "Email successfully saved to:" & vbCrLf & chosenPath, vbInformation, "Success"
+    End If
+
+ExitRoutine:
+    Set olMail = Nothing
+    Set olSelection = Nothing
+    Set olApp = Nothing
+    Exit Sub
+
+ErrorHandler:
+    Dim errNum As Long
+    Dim errDesc As String
+    errNum = Err.Number
+    errDesc = Err.Description
+    
+    If errNum = -2147024891 Then '&H80070005
+        MsgBox "Permission denied. You may not have write access to this folder.", vbCritical, "Error Saving File"
+    Else
+        MsgBox "An unexpected error occurred:" & vbCrLf & "Error #" & errNum & ": " & errDesc, vbCritical, "Macro Error"
+    End If
+    Resume ExitRoutine
+End Sub
+
+Private Function GenerateRandomHex(ByVal length As Integer) As String
+    Dim i As Integer
+    Dim hexStr As String
+    Dim randomValue As Integer
+    
+    Randomize
+    hexStr = ""
+    For i = 1 To length
+        randomValue = Int(Rnd() * 16)
+        hexStr = hexStr & Hex(randomValue)
+    Next i
+    
+    GenerateRandomHex = LCase(hexStr)
+End Function
